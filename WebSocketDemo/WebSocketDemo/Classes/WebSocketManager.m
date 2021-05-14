@@ -68,9 +68,9 @@ dispatch_async(dispatch_get_main_queue(), block);\
     NSLog(@"sendPing heart");
     
     //NSData *heartData = [@"ping" dataUsingEncoding:NSUTF8StringEncoding];
-    NSData *heartData = [[NSData alloc] initWithBase64EncodedString:@"ping" options:NSUTF8StringEncoding];
-    [self.webScoket sendPing:heartData];
-    //[self sendDataToServer:@"ping"];
+    //NSData *heartData = [[NSData alloc] initWithBase64EncodedString:@"ping" options:NSUTF8StringEncoding];
+    //[self.webScoket sendPing:heartData];
+    [self sendDataToServer:@"ping"];
 }
 
 // 关闭长连接

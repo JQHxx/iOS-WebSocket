@@ -132,16 +132,11 @@
             dict[@"token"] = userToken;
             
             NSString *paramStr = KADSYAESCBCEncryptData(dict.mj_JSONString, @"kijhytgvmt578943", @"erasrehyt5rtyj75");
-            paramStr = [self urlEncode:paramStr];
-
-            
+            //paramStr = [self urlEncode:paramStr];
+            paramStr = [paramStr stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet characterSetWithCharactersInString:@"?!@#$^&%*+,:;='\"`<>()[]{}/\\| "].invertedSet];
             /*
             NSString *decodeStr = @"byRcb7NFWsDeJSUXqvHhxuTLmEh6bKvk0YxLL7aQdd7IaWm7iTdOfF9Sdw2EJ6oZaeyS7e9FSn0uHjqhTl1tJ6F3GGUN4/n48o1aQZxBBwSTHC/dc3i5WuP394Ab9eessD4dlWIAv7NGc/Vrr/sUp/RERDgXEzl+bnzPqhFlz1H3vjdPLnyzMIfCbNWvL/uGR8aAWnJpX5jOJEe1x5heyQ==";
             decodeStr = KADSYAESCBCDecryptData(decodeStr, @"kijhytgvmt578943", @"erasrehyt5rtyj75");
-             */
-            
-            /*
-            NSString *paramStr = [AESEncrypt AES128Encrypt:dict.mj_JSONString];
              */
             
             NSString *url = [NSString stringWithFormat:@"ws://newlive.ofweek.com/api/web/ws/webSocket?param=%@&needDecode=1", paramStr];
