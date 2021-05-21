@@ -1,4 +1,4 @@
-framework module Pods_WebSocketDemo {
+module Pods_WebSocketDemo {
   umbrella header "Pods-WebSocketDemo-umbrella.h"
 
   export *

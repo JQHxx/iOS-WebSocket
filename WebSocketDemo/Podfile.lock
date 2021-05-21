@@ -16,23 +16,27 @@ PODS:
     - AFNetworking/NSURLSession
   - MJExtension (3.2.4)
   - SocketRocket (0.5.1)
+  - Starscream (4.0.4)
 
 DEPENDENCIES:
   - AFNetworking (~> 4.0.0)
   - MJExtension (~> 3.2.1)
   - SocketRocket
+  - Starscream (~> 4.0.0)
 
 SPEC REPOS:
   trunk:
     - AFNetworking
     - MJExtension
     - SocketRocket
+    - Starscream
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
   MJExtension: 88e0900751b6cac8de1cf724ca9838a0b28d5acb
   SocketRocket: d57c7159b83c3c6655745cd15302aa24b6bae531
+  Starscream: 5178aed56b316f13fa3bc55694e583d35dd414d9
 
-PODFILE CHECKSUM: c204402b19ca8a794e261a39040780aabae24b36
+PODFILE CHECKSUM: 72ab209a12a75083733060dd6b67ce6b6e11f8c9
 
 COCOAPODS: 1.10.1

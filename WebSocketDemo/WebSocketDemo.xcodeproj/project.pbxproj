@@ -17,6 +17,7 @@
 		A06080A5264E143A0078087F /* NSData+ADSuyiKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A06080A2264E143A0078087F /* NSData+ADSuyiKit.m */; };
 		A06080A6264E143A0078087F /* ADSuyiKitCryptoRSA.m in Sources */ = {isa = PBXBuildFile; fileRef = A06080A3264E143A0078087F /* ADSuyiKitCryptoRSA.m */; };
 		A06080A7264E143A0078087F /* ADSuyiKitCryptoAES.m in Sources */ = {isa = PBXBuildFile; fileRef = A06080A4264E143A0078087F /* ADSuyiKitCryptoAES.m */; };
+		A068AA85265786A000A0A1B2 /* SocketManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A068AA84265786A000A0A1B2 /* SocketManager.swift */; };
 		A0F14507262D84F500F97249 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F14506262D84F500F97249 /* AppDelegate.m */; };
 		A0F1450D262D84F500F97249 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A0F1450C262D84F500F97249 /* ViewController.m */; };
 		A0F14510262D84F500F97249 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A0F1450E262D84F500F97249 /* Main.storyboard */; };
@@ -67,6 +68,8 @@
 		A06080A2264E143A0078087F /* NSData+ADSuyiKit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSData+ADSuyiKit.m"; sourceTree = "<group>"; };
 		A06080A3264E143A0078087F /* ADSuyiKitCryptoRSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADSuyiKitCryptoRSA.m; sourceTree = "<group>"; };
 		A06080A4264E143A0078087F /* ADSuyiKitCryptoAES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADSuyiKitCryptoAES.m; sourceTree = "<group>"; };
+		A068AA7B2657866E00A0A1B2 /* WebSocketDemo-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WebSocketDemo-Bridging-Header.h"; sourceTree = "<group>"; };
+		A068AA84265786A000A0A1B2 /* SocketManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SocketManager.swift; sourceTree = "<group>"; };
 		A0F14502262D84F500F97249 /* WebSocketDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WebSocketDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0F14505262D84F500F97249 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A0F14506262D84F500F97249 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -201,6 +204,7 @@
 		A0F1453D262D853B00F97249 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A068AA84265786A000A0A1B2 /* SocketManager.swift */,
 				A060809E264E143A0078087F /* crypto */,
 				A060808D264E116C0078087F /* GTMBase64.h */,
 				A060808B264E116C0078087F /* GTMBase64.m */,
@@ -213,6 +217,7 @@
 				A04D3003262E841C0031CD45 /* CSTextField.m */,
 				A0608085264E11150078087F /* AESEncrypt.h */,
 				A0608086264E11150078087F /* AESEncrypt.m */,
+				A068AA7B2657866E00A0A1B2 /* WebSocketDemo-Bridging-Header.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -299,6 +304,7 @@
 				TargetAttributes = {
 					A0F14501262D84F500F97249 = {
 						CreatedOnToolsVersion = 12.2;
+						LastSwiftMigration = 1220;
 					};
 					A0F1451C262D84F900F97249 = {
 						CreatedOnToolsVersion = 12.2;
@@ -441,6 +447,7 @@
 				A06080A7264E143A0078087F /* ADSuyiKitCryptoAES.m in Sources */,
 				A060808E264E116C0078087F /* GTMBase64.m in Sources */,
 				A06080A5264E143A0078087F /* NSData+ADSuyiKit.m in Sources */,
+				A068AA85265786A000A0A1B2 /* SocketManager.swift in Sources */,
 				A0F14518262D84F800F97249 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -614,6 +621,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WebSocketDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -622,6 +630,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ofweek.WebSocketDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WebSocketDemo/Classes/WebSocketDemo-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -632,6 +643,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WebSocketDemo/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -640,6 +652,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.ofweek.WebSocketDemo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "WebSocketDemo/Classes/WebSocketDemo-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -648,6 +662,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 3FE6E466EAC8CE34EA4B2BAC /* Pods-WebSocketDemoTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WebSocketDemoTests/Info.plist;
@@ -668,6 +683,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = E959CCDA5DC88F88DE51CE87 /* Pods-WebSocketDemoTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WebSocketDemoTests/Info.plist;
@@ -688,6 +704,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CF6D8ECD286D7265B56BF237 /* Pods-WebSocketDemo-WebSocketDemoUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WebSocketDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -706,6 +723,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9F55E5AFB93BFAA4AEB1075A /* Pods-WebSocketDemo-WebSocketDemoUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = WebSocketDemoUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

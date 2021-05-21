@@ -13,6 +13,7 @@
 //#import "AESEncrypt.h"
 #import "ADSuyiKitCryptoAES.h"
 //#import "NSData+ADSuyiKit.h"
+#import "WebSocketDemo-Swift.h"
 
 
 @interface ViewController ()
@@ -114,7 +115,7 @@
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
     params[@"account"] = @"18775134221";
     params[@"password"] = @"123456";
-    [manager GET:[NSString stringWithFormat:@"%@%@", @"http://newlive.ofweek.com", @"/api/web/login/memberlogin"] parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+    [manager GET:[NSString stringWithFormat:@"%@%@", @"http://livetest.ofweek.com", @"/api/web/login/memberlogin"] parameters:params headers:nil progress:nil success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
 
         //NSLog(@"%@", responseObject);
         NSInteger code = [responseObject[@"code"] integerValue];
@@ -139,7 +140,7 @@
             decodeStr = KADSYAESCBCDecryptData(decodeStr, @"kijhytgvmt578943", @"erasrehyt5rtyj75");
              */
             
-            NSString *url = [NSString stringWithFormat:@"ws://newlive.ofweek.com/api/web/ws/webSocket?param=%@&needDecode=1", paramStr];
+            NSString *url = [NSString stringWithFormat:@"wss://livetest.ofweek.com/api/web/ws/webSocket?param=%@&needDecode=1", paramStr];
             [WebSocketManager shared].linkURL = url;
             [[WebSocketManager shared] connectServer];
             
